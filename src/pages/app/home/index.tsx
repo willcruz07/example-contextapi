@@ -1,7 +1,9 @@
 /* eslint-disable array-callback-return */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { CardProduct } from '../../../components/CardProduct';
+import { useAppContext } from '../../../hook/AppContext';
 import { IProduct } from '../../../models/product';
+import { addProduct } from '../../../store/product/actions';
 
 import './styles.scss';
 
@@ -84,11 +86,18 @@ const listProduct:IProduct[] = [
 ];
 
 export const Home: React.FC = () => {
+
+    const { state, dispatch } = useAppContext();
+    
+    useEffect(() => {
+        dispatch(addProduct(listProduct));
+    }, []);
+    
     if (!listProduct) return <span>Loading...</span>;
 
     return (
         <div className="containerProductsGrid">
-            {listProduct.map((product) => (
+            {state.products.products.map((product) => (
                 <CardProduct
                     key={product.id}
                     name={product.name}

@@ -2,9 +2,11 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { FaTimes, FaTrash } from 'react-icons/fa';
-import { IShoppingCart } from '../../models/shoppingCart';
+import { IProductToCart, IShoppingCart } from '../../models/shoppingCart';
 import { formattedCurrency } from '../../utils/LIB';
 import './styles.scss';
+import { useAppContext } from '../../hook/AppContext';
+import { deleteProduct } from '../../store/shoppingCart/actions';
 
 interface IModalProps {
     modalIsOpen: boolean;
@@ -40,7 +42,14 @@ const shoppingCart: IShoppingCart = {
     quantity: 3,
 };
 
-export const ModalOrder: React.FC<IModalProps> = ({ modalIsOpen, onRequestClose }) => (
+export const ModalOrder: React.FC<IModalProps> = ({ modalIsOpen, onRequestClose }) => {
+    const { state, dispatch } = useAppContext();
+
+    const handleRemoveProductFromCart = (product: IProductToCart) => {        
+        dispatch(deleteProduct(product));
+    };
+
+    return (
     <Modal
         ariaHideApp={false}
         className="modal"
@@ -57,14 +66,15 @@ export const ModalOrder: React.FC<IModalProps> = ({ modalIsOpen, onRequestClose 
 
             </div>
             <div className="content">
-                {shoppingCart.products.map((product) => (
-                    <div key={product.id} className="containerProduct">
+                {state.shoppingCart.products.map((product) => (
+                    <div onClick={() => handleRemoveProductFromCart(product)} key={product.id} className="containerProduct">
                         <span className="product">{`${product.quantity}x ${product.name} - ${formattedCurrency(product.price * product.quantity)}`}</span>
                         <FaTrash className="iconTrash" />
                     </div>
                 ))}
             </div>
-            <h1 className="totalOrder">{`Total: ${formattedCurrency(shoppingCart.total)}`}</h1>
+            <h1 className="totalOrder">{`Total: ${formattedCurrency(state.shoppingCart.total)}`}</h1>
         </div>
     </Modal>
-);
+)
+};

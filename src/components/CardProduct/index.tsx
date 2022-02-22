@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useAppContext } from '../../hook/AppContext';
 import { IProduct } from '../../models/product';
+import { addProduct } from '../../store/shoppingCart/actions';
 import { formattedCurrency } from '../../utils/LIB';
 import { ButtonPrimary } from '../ButtonPrimary';
 import { ButtonQuantity } from '../ButtonQuantity';
@@ -10,6 +12,17 @@ interface ICardProduct extends IProduct {}
 
 export const CardProduct: React.FC<ICardProduct> = ({ name, imageUri, price }) => {
     const [quantity, setQuantity] = useState(1);
+
+    const { dispatch } = useAppContext();
+
+    const handleAddProduct = () => {
+        dispatch(addProduct({
+            name,
+            imageUri,
+            price,
+            quantity            
+        }))
+    }
 
     return (
         <div className="containerProduct">
@@ -23,7 +36,7 @@ export const CardProduct: React.FC<ICardProduct> = ({ name, imageUri, price }) =
                 <span className="price">{formattedCurrency(price * quantity)}</span>
                 <ButtonPrimary
                     title="Adicionar"
-                    onClick={() => {}}
+                    onClick={() => handleAddProduct()}
                 />
             </div>
         </div>

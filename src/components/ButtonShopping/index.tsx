@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { FaShoppingCart } from 'react-icons/fa';
+import { useAppContext } from '../../hook/AppContext';
 
 import './styles.scss';
 
@@ -9,7 +10,9 @@ interface IButtonShoppingProps {
 }
 
 export const ButtonShopping: React.FC<IButtonShoppingProps> = ({ onClick }) => {
-    const [quantityInCart, setQuantityInCart] = useState(0);
+    const [quantityInCart, setQuantityInCart] = useState(2);
+
+    const { state } = useAppContext();
 
     return (
         <button
@@ -18,9 +21,9 @@ export const ButtonShopping: React.FC<IButtonShoppingProps> = ({ onClick }) => {
             onClick={onClick}
         >
             <FaShoppingCart />
-            {quantityInCart > 0 && (
+            {state.shoppingCart.quantity > 0 && (
                 <div className="badge">
-                    <span>{quantityInCart}</span>
+                    <span>{state.shoppingCart.quantity}</span>
                 </div>
             )}
         </button>

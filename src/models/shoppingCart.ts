@@ -1,6 +1,6 @@
 import { IProduct } from './product';
 
-interface IProductToCart extends IProduct {
+export interface IProductToCart extends IProduct {
     quantity: number;
 }
 
