@@ -1,0 +1,40 @@
+.containerProduct {
+
+    background-color: #FFF;
+    width: 224px;
+    height: 400px;   
+    margin-bottom: 32px;
+    border-radius: 8px;
+    border: 1px solid rgb(224, 224, 224);
+
+    .containerImage {    
+        border-bottom: 1px solid #ccc;        
+        width: 224px;
+        height: 224px;                
+    }
+
+    img {
+        object-fit: contain;
+    }
+
+    
+
+    .containerDescription {
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+
+        .description {
+            color: rgb(44, 44, 46);
+            margin-bottom: 4px;
+            font-size: 13px;
+        }
+
+        .price {
+            color: rgb(55, 102, 75);
+            margin-bottom: 8px;
+            font-weight: 600;            
+        }
+        
+    }
+}

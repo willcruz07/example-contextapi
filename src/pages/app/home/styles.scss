@@ -1,0 +1,7 @@
+.containerProductsGrid {  
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);    
+    gap: 1rem;
+
+    margin-top: 32px;    
+}

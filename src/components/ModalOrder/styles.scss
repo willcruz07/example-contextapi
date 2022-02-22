@@ -1,0 +1,111 @@
+@import '../../styles/variables.scss';
+
+@keyframes showModal {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.158);
+    height: 100vh;
+
+    animation: showModal 0.2s linear;
+    animation-fill-mode: both;
+
+    padding: 2rem;
+
+}
+
+.containerModal {
+    display: flex;
+    flex-direction: column;
+    background-color: $color-background;
+
+    width: 400px;
+    height: 450px;
+    
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 3px 5px rgb(129, 129, 129);
+
+
+    padding: 1rem;
+
+    .header {
+        display: flex;
+        flex-direction: row;
+        
+        align-items: center;
+        justify-content: space-between;
+
+        height: 48px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+        height: 400px;
+        padding: 0 0.5rem;
+
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+
+        padding-top: 0.5rem;
+
+        overflow-y: scroll;
+
+        .containerProduct {
+            display: flex;
+            flex-direction: row;
+
+            justify-content: space-between;
+
+            width: 100%;
+            height: 48px;
+            padding: 1rem;     
+            margin-bottom: 8px;       
+
+            .iconTrash {
+                cursor: pointer;
+                color: rgb(61, 61, 61);
+            }
+        }
+
+        .product {            
+            color: rgb(61, 61, 61);
+        }
+    }
+
+
+    .iconClose {        
+        cursor: pointer;
+        color: rgb(71, 71, 71);
+        font-size: 24px;
+
+    }
+
+    .titleOrder {        
+        font-size: 24px;
+        color: rgb(61, 61, 61);
+    }
+
+
+    .totalOrder {
+        margin-top: 8px;
+        font-size: 24px;
+        color: rgb(61, 61, 61);
+    }
+
+}

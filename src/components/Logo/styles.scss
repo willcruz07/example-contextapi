@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.containerLogo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    span {
+        margin-top: $d--8;
+        color: $color-gray-2;
+    }
+
+    svg {
+        color: $color-primary;
+    }
+}

@@ -1,0 +1,35 @@
+
+@import '../../../styles/variables.scss';
+
+.containerSingIn {
+    display: flex;    
+    height: 100vh;
+
+    align-items: center;
+    justify-content: center;    
+}
+
+.singIn {    
+    display: flex;
+    flex-direction: column;    
+    justify-content: space-between;    
+    
+    min-height: 480px;
+    min-width: $d--500;
+    padding: $d--16;
+
+    border-radius: 8px;
+    border: $d--1 solid $color-gray;
+    
+    background-color: $color-white;
+    box-shadow: 3px 5px 10px $color-gray;
+}
+
+.containerLogo {
+    display: flex;
+    justify-content: center;
+}
+
+.containerInputs {
+    margin-bottom: $d--56;
+}

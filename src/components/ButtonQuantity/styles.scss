@@ -1,0 +1,29 @@
+.containerButtonQuantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-bottom: 1px solid #ccc;    
+
+    button {
+        background: none;
+        border: 0;
+        outline: none;
+        padding: 0.5rem;
+
+        width: 48px;
+        height: 48px;
+
+        &:disabled {
+            cursor: not-allowed;
+            svg {
+                opacity: 0.2;
+                filter: brightness(0.4);
+            }
+        }
+
+        svg {
+        color: #2e526e
+        }
+    }
+}

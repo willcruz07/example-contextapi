@@ -1,0 +1,29 @@
+@import '../../styles/variables.scss';
+
+.containerInput {
+  display: flex;
+  align-items: center;
+
+  padding: $d--16 $d--24;
+
+  border: $d--1 solid $color-gray;
+
+  border-radius: $d--8;
+  width: 100%;
+
+  background-color: $color-background;
+
+  input {    
+    width: 100%;
+    outline: none;
+    background: none;
+    border: 0;
+  }
+  
+  svg {
+    font-size: $d--20;
+    margin-right: 0.5rem;
+    color: $color-gray-2;
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,43 @@
+.buttonShopping {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 72px;
+    width: 72px;
+    border-radius: 100%;
+    background-color: #2e526e;          
+
+    svg {
+        color: #fff;
+        width: 24px;
+        height: 24px;
+    }
+
+    transition: 0.2s ease-in;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    .badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        height: 22px;
+        width: 22px;
+
+        background-color: rgb(214, 72, 72);        
+        padding: 4px;
+        border-radius: 50%;
+
+        margin-left: -12px;
+        margin-top: -24px;
+
+        span{
+            color: white;
+            font-size: 12px;
+        }
+    }
+}
