@@ -35,11 +35,11 @@
 
 Exemplo de um projeto e-commerce utilizando context api + useReducer para gerenciamento de estado global da aplicação.
 
-## :sparkles: Features ##
+<!-- ## :sparkles: Features ##
 
 :heavy_check_mark: Feature 1;\
 :heavy_check_mark: Feature 2;\
-:heavy_check_mark: Feature 3;
+:heavy_check_mark: Feature 3; -->
 
 ## :rocket: Technologies ##
 
@@ -59,7 +59,7 @@ Antes de iniciar o projeto é necessário [Node](https://nodejs.org/en/) instala
 
 ```bash
 # Clone this project
-$ git clone https://github.com/willcruz07/exemple-contextapi
+$ git clone https://github.com/willcruz07/example-contextapi
 
 # Install dependencies
 $ yarn
